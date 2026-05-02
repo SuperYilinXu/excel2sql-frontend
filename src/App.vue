@@ -21,6 +21,11 @@ const store = useExcel2SqlStore()
       </div>
     </header>
 
+    <div class="privacy-bar">
+      <span class="privacy-icon">🔒</span>
+      您上传的文件与生成的数据仅用于本次转换，处理完成后将立即从服务器删除，不会被保留或用于任何其他用途。
+    </div>
+
     <main class="main-content">
       <div class="container">
         <StepProgress :current="store.currentStep" />
@@ -33,6 +38,15 @@ const store = useExcel2SqlStore()
         </div>
       </div>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span class="footer-feedback">
+          遇到 Bug 或有改进建议？欢迎发邮件告诉我：
+          <a href="mailto:2124760136@qq.com" class="footer-email">2124760136@qq.com</a>
+        </span>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -287,6 +301,50 @@ body {
 .main-content {
   padding-top: 80px;
   padding-bottom: 64px;
+}
+
+.privacy-bar {
+  position: sticky;
+  top: 56px;
+  z-index: 90;
+  background: #f0f7ff;
+  border-bottom: 1px solid #d0e6f7;
+  color: #4a7aad;
+  font-size: 12.5px;
+  text-align: center;
+  padding: 7px 24px;
+  line-height: 1.5;
+}
+
+.privacy-icon {
+  margin-right: 5px;
+}
+
+.site-footer {
+  background: #f7f9fc;
+  border-top: 1px solid #e8eef6;
+  padding: 20px 24px;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-feedback {
+  font-size: 13px;
+  color: #888;
+}
+
+.footer-email {
+  color: #4a90d9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-email:hover {
+  text-decoration: underline;
 }
 
 .container {
