@@ -3,7 +3,7 @@ import { ref, onUnmounted } from 'vue'
 import { generateSql, getGenerateResult } from '@/api'
 import { useExcel2SqlStore } from '@/stores/excel2sql'
 
-const BASE_URL = 'http://localhost:8080'
+const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? ''
 
 const store = useExcel2SqlStore()
 
